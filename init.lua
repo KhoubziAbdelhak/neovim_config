@@ -1,3 +1,3 @@
 
-require("abdelhak")
+require("core")
 

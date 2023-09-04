@@ -6,7 +6,7 @@ local cmp = require('cmp')
 
 cmp.setup({
     mapping = {
-        ['<CR>'] = cmp.mapping.confirm({select = false}),
+        ['<CR>'] = cmp.mapping.confirm({ select = false }),
     }
 })
 
@@ -20,17 +20,19 @@ lsp.setup()
 local nvim_lsp = require('lspconfig')
 
 -- Show hover
-vim.api.nvim_set_keymap('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', { noremap = true, silent = true })
+
+-- rename
+vim.keymap.set('n', '<leader>rn', '<Cmd>lua vim.lsp.buf.rename()<CR>')
 
 -- Jump to definition
-vim.api.nvim_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', { noremap = true, silent = true })
 
 -- Open code actions using the default lsp UI
 --
-vim.api.nvim_set_keymap('n', '<leader>ca', '<Cmd>lua vim.lsp.buf.code_action()<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '<leader>ca', '<Cmd>lua vim.lsp.buf.code_action()<CR>', { noremap = true, silent = true })
 
 
 -- Open code actions for the selected visual range
-vim.api.nvim_set_keymap('x', '<leader>ca', '<Cmd>lua vim.lsp.buf.range_code_action()<CR>', { noremap = true, silent = true })
-
-
+vim.keymap.set('x', '<leader>ca', '<Cmd>lua vim.lsp.buf.range_code_action()<CR>',
+    { noremap = true, silent = true })

@@ -28,5 +28,6 @@ vim.opt.colorcolumn = "80"
 
 -- Set the colorscheme
 vim.cmd('colorscheme material-deep-ocean')
+vim.cmd([[hi Normal guibg=NONE ctermbg=NONE]])
 
 vim.g.mapleader = " "
